@@ -87,6 +87,10 @@ class Minitest::Spec
     CONFIG.organization_id
   end
 
+  def machine_id
+    CONFIG.machine_id
+  end
+
   def asset_id
     CONFIG.asset_id
   end

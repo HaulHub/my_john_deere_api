@@ -1,5 +1,10 @@
 module MyJohnDeereApi::Model
   autoload :Base,                     'my_john_deere_api/model/base'
+  autoload :Machine,                  'my_john_deere_api/model/machine'
+  autoload :MachineEngineHour,        'my_john_deere_api/model/machine_engine_hour'
+  autoload :MachineDeviceStateReport, 'my_john_deere_api/model/machine_device_state_report'
+  autoload :MachineHoursOfOperation,  'my_john_deere_api/model/machine_hours_of_operation'
+  autoload :MachineBreadcrumb,        'my_john_deere_api/model/machine_breadcrumb'
   autoload :Asset,                    'my_john_deere_api/model/asset'
   autoload :AssetLocation,            'my_john_deere_api/model/asset_location'
   autoload :ContributionProduct,      'my_john_deere_api/model/contribution_product'

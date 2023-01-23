@@ -6,6 +6,26 @@ describe 'MyJohnDeereApi::Model' do
       assert JD::Model::Base
     end
 
+    it 'loads Model::Machine' do
+      assert JD::Model::Machine
+    end
+
+    it 'loads Model::MachineEngineHour' do
+      assert JD::Model::MachineEngineHour
+    end
+
+    it 'loads Model::MachineDeviceStateReport' do
+      assert JD::Model::MachineDeviceStateReport
+    end
+
+    it 'loads Model::MachineHoursOfOperation' do
+      assert JD::Model::MachineHoursOfOperation
+    end
+
+    it 'loads Model::MachineBreadcrumb' do
+      assert JD::Model::MachineBreadcrumb
+    end
+
     it 'loads Model::Asset' do
       assert JD::Model::Asset
     end

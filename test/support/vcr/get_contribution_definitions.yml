@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"@type":"ApiCatalog","links":[{"@type":"Link","rel":"oauthRequestToken","uri":"https://sandboxapi.deere.com/platform/oauth/request_token"},{"@type":"Link","rel":"oauthAuthorizeRequestToken","uri":"https://my.deere.com/consentToUseOfData?oauth_token={token}"},{"@type":"Link","rel":"oauthAccessToken","uri":"https://sandboxapi.deere.com/platform/oauth/access_token"},{"@type":"Link","rel":"agencies","uri":"https://sandboxapi.deere.com/platform/agencies"}]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:17 GMT
 - request:
     method: get
@@ -86,6 +86,6 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"links":[{"rel":"self","uri":"https://sandboxapi.deere.com/platform/contributionProducts/00000000-0000-0000-0000-000000000000/contributionDefinitions"}],"total":1,"values":[{"@type":"ContributionDefinition","name":"Definition
         Name","actionDefinitions":[],"id":"00000000-0000-0000-0000-000000000000","links":[{"@type":"Link","rel":"self","uri":"https://sandboxapi.deere.com/platform/contributionDefinitions/00000000-0000-0000-0000-000000000000"},{"@type":"Link","rel":"contributionProduct","uri":"https://sandboxapi.deere.com/platform/contributionProducts/00000000-0000-0000-0000-000000000000"}]}]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:17 GMT
 recorded_with: VCR 5.0.0

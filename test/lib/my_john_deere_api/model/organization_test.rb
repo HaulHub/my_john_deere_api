@@ -78,6 +78,19 @@ describe 'MyJohnDeereApi::Model::Organization' do
     end
   end
 
+  describe '#machines' do
+    it 'returns a collection of machines for this organization' do
+      organization = VCR.use_cassette('get_organizations') { client.organizations.first }
+      machines = VCR.use_cassette('get_machines') { organization.machines.all; organization.machines }
+
+      assert_kind_of JD::Request::Collection::Machines, machines
+
+      machines.each do |machines|
+        assert_kind_of JD::Model::Machine, machines
+      end
+    end
+  end
+
   describe '#assets' do
     it 'returns a collection of assets for this organization' do
       organization = VCR.use_cassette('get_organizations') { client.organizations.first }

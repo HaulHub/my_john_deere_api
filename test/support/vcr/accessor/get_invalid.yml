@@ -41,6 +41,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: You Have Died of Dysentery
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 recorded_with: VCR 5.0.0

@@ -6,6 +6,10 @@ describe 'MyJohnDeereApi::Request::Individual' do
       assert JD::Request::Individual::Base
     end
 
+    it 'loads Request::Individual::Machine' do
+      assert JD::Request::Individual::Machine
+    end
+
     it 'loads Request::Individual::Asset' do
       assert JD::Request::Individual::Asset
     end

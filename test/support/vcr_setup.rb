@@ -14,7 +14,7 @@ require 'date'
 class VcrSetup
   attr_reader :api_key, :api_secret, :access_token, :new_access_token, :refresh_token,
               :verify_code, :contribution_product_id, :contribution_definition_id,
-              :placeholders, :organization_id, :asset_id, :field_id, :flag_id
+              :placeholders, :organization_id, :machine_id, :asset_id, :field_id, :flag_id
 
   AUTH_CASSETTES = [:catalog, :get_request_url, :get_access_token, :get_refresh_token]
 
@@ -24,6 +24,7 @@ class VcrSetup
     :get_contribution_definitions, :get_contribution_definition,
     :get_organizations, :get_organization,
     :get_fields, :get_field, :get_flags,
+    :get_machines, :get_machine,
     :post_assets, :get_assets, :get_asset, :put_asset,
     :post_asset_locations, :get_asset_locations,
     :delete_asset
@@ -45,6 +46,7 @@ class VcrSetup
     @contribution_product_id = @uuid
     @contribution_definition_id = @uuid
     @organization_id = '000000'
+    @machine_id = @uuid
     @asset_id = @uuid
     @field_id = @uuid
     @flag_id = @uuid
@@ -332,6 +334,14 @@ class VcrSetup
     @temporary_field.flags.all
   end
 
+  def get_machines
+    find_organization(ENV['ORGANIZATION_ID']).machines.all
+  end
+
+  def get_machine
+    find_organization(ENV['ORGANIZATION_ID']).machines.find(@temporary_machine_id)
+  end
+
   def post_assets
     @temporary_asset_id = find_organization(ENV['ORGANIZATION_ID']).assets.create(asset_attributes).id
     placeholders[@temporary_asset_id] = asset_id
@@ -378,7 +388,10 @@ class VcrSetup
     VCR.configure do |config|
       config.cassette_library_dir = 'test/support/vcr'
       config.hook_into :webmock
-      config.default_cassette_options = {record: :once}
+      config.default_cassette_options = {
+        record: :once,
+        match_requests_on: [:method, :path]
+      }
     end
   end
 

@@ -21,6 +21,14 @@ module MyJohnDeereApi
     end
 
     ##
+    # machines associated with this organization
+
+    def machines
+      return @machines if defined?(@machines)
+      @machines = MyJohnDeereApi::Request::Collection::Machines.new(client, organization: id)
+    end
+
+    ##
     # assets associated with this organization
 
     def assets
