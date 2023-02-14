@@ -44,7 +44,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -90,7 +90,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -136,7 +136,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -182,7 +182,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -228,7 +228,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -274,7 +274,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -320,7 +320,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -366,7 +366,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 - request:
     method: post
@@ -412,6 +412,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:26 GMT
 recorded_with: VCR 5.0.0

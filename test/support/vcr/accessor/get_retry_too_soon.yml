@@ -43,7 +43,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 - request:
     method: get
@@ -88,7 +88,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 - request:
     method: get
@@ -133,7 +133,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 - request:
     method: get
@@ -178,7 +178,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 - request:
     method: get
@@ -221,6 +221,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"@type":"ApiCatalog","links":[{"@type":"Link","rel":"oauthRequestToken","uri":"https://sandboxapi.deere.com/platform/oauth/request_token"},{"@type":"Link","rel":"oauthAuthorizeRequestToken","uri":"https://my.deere.com/consentToUseOfData?oauth_token={token}"},{"@type":"Link","rel":"oauthAccessToken","uri":"https://sandboxapi.deere.com/platform/oauth/access_token"},{"@type":"Link","rel":"agencies","uri":"https://sandboxapi.deere.com/platform/agencies"}]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:28 GMT
 recorded_with: VCR 5.0.0

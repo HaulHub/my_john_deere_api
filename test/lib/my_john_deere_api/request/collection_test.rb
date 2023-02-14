@@ -6,6 +6,26 @@ describe 'MyJohnDeereApi::Request::Collection' do
       assert JD::Request::Collection::Base
     end
 
+    it 'loads Request::Collection::Machines' do
+      assert JD::Request::Collection::Machines
+    end
+
+    it 'loads Request::Collection::MachineEngineHours' do
+      assert JD::Request::Collection::MachineEngineHours
+    end
+
+    it 'loads Request::Collection::MachineDeviceStateReports' do
+      assert JD::Request::Collection::MachineDeviceStateReports
+    end
+
+    it 'loads Request::Collection::MachineHoursOfOperation' do
+      assert JD::Request::Collection::MachineHoursOfOperation
+    end
+
+    it 'loads Request::Collection::MachineBreadcrumbs' do
+      assert JD::Request::Collection::MachineBreadcrumbs
+    end
+
     it 'loads Request::Collection::Assets' do
       assert JD::Request::Collection::Assets
     end

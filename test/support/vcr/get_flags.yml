@@ -42,6 +42,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"links":[{"rel":"self","uri":"https://sandboxapi.deere.com/platform/organizations/000000/fields/00000000-0000-0000-0000-000000000000/flags"}],"total":0,"values":[]}'
-    http_version: 
+    http_version:
   recorded_at: Mon, 10 Feb 2020 17:29:24 GMT
 recorded_with: VCR 5.0.0
