@@ -55,7 +55,7 @@ module MyJohnDeereApi
         site: site,
         authorize_url: authorization_links[:authorization],
         token_url: authorization_links[:token],
-        raise_errors: false,
+        raise_errors: true,
       )
     end
 
