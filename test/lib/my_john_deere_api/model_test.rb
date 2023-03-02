@@ -26,6 +26,10 @@ describe 'MyJohnDeereApi::Model' do
       assert JD::Model::MachineBreadcrumb
     end
 
+    it 'loads Model::MachineLocationHistory' do
+      assert JD::Model::MachineLocationHistory
+    end
+
     it 'loads Model::Asset' do
       assert JD::Model::Asset
     end

@@ -48,8 +48,8 @@ describe 'MyJohnDeereApi::Model::Machine' do
 
       [
         'self', 'organizations', 'alerts', 'hours_of_operation',
-        'device_state_reports', 'engine_hours', 'location_history',
-        'breadcrumbs', 'capabilities'
+        'device_state_reports', 'engine_hours', 'breadcrumbs',
+        'location_history', 'capabilities'
       ].each do |association|
         assert_link_for(machine, association)
       end
@@ -135,6 +135,24 @@ describe 'MyJohnDeereApi::Model::Machine' do
 
       breadcrumbs.each do |breadcrumb|
         assert_kind_of JD::Model::MachineBreadcrumb, breadcrumb
+      end
+    end
+  end
+
+  describe '#location_history' do
+    it 'returns a collection of location history for this machine' do
+      organization = VCR.use_cassette('get_organizations') { client.organizations.first }
+      machine = VCR.use_cassette('get_machines') { organization.machines.first }
+
+      location_history = VCR.use_cassette('get_machine_location_history') do
+        machine.location_history.all
+        machine.location_history
+      end
+
+      assert_kind_of Array, location_history.all
+
+      location_history.each do |location_history|
+        assert_kind_of JD::Model::MachineLocationHistory, location_history
       end
     end
   end

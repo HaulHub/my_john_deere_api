@@ -50,6 +50,12 @@ module MyJohnDeereApi
       end
     end
 
+    def location_history(**kwargs)
+      (@location_history ||= {})[kwargs.hash] ||= begin
+        Request::Collection::MachineLocationHistory.new(client, machine: id, **kwargs)
+      end
+    end
+
     private
 
     def map_attributes(record)
