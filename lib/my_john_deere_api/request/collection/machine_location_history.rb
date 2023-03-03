@@ -6,7 +6,7 @@ module MyJohnDeereApi::Request
     # The resource path for the first page in the collection
 
     def resource
-      "/platform/machines/#{associations[:machine]}/locationHistory?lastKnown=#{associations[:last_known]}"
+      "/platform/machines/#{associations[:machine]}/locationHistory?lastKnown=#{associations[:last_known]}&startDate=#{associations[:start_date]}"
     end
 
     ##
