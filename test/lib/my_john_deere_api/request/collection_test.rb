@@ -26,6 +26,10 @@ describe 'MyJohnDeereApi::Request::Collection' do
       assert JD::Request::Collection::MachineBreadcrumbs
     end
 
+    it 'loads Request::Collection::MachineLocationHistory' do
+      assert JD::Request::Collection::MachineLocationHistory
+    end
+
     it 'loads Request::Collection::Assets' do
       assert JD::Request::Collection::Assets
     end

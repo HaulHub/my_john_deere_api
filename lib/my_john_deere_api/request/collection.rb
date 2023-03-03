@@ -5,6 +5,7 @@ module MyJohnDeereApi::Request::Collection
   autoload :MachineDeviceStateReports,          'my_john_deere_api/request/collection/machine_device_state_reports'
   autoload :MachineHoursOfOperation,            'my_john_deere_api/request/collection/machine_hours_of_operation'
   autoload :MachineBreadcrumbs,                 'my_john_deere_api/request/collection/machine_breadcrumbs'
+  autoload :MachineLocationHistory,             'my_john_deere_api/request/collection/machine_location_history'
   autoload :Assets,                             'my_john_deere_api/request/collection/assets'
   autoload :AssetLocations,                     'my_john_deere_api/request/collection/asset_locations'
   autoload :ContributionProducts,               'my_john_deere_api/request/collection/contribution_products'
