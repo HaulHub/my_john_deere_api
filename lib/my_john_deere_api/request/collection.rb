@@ -13,4 +13,5 @@ module MyJohnDeereApi::Request::Collection
   autoload :Organizations,                      'my_john_deere_api/request/collection/organizations'
   autoload :Fields,                             'my_john_deere_api/request/collection/fields'
   autoload :Flags,                              'my_john_deere_api/request/collection/flags'
+  autoload :Fleets,                             'my_john_deere_api/request/collection/fleets'
 end

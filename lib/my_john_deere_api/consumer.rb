@@ -11,6 +11,11 @@ module MyJohnDeereApi
       live: 'https://partnerapi.deere.com',
     }
 
+    AEMP_URLS = {
+      sandbox: 'https://sandboxaemp.deere.com',
+      live: 'https://partneraemp.deere.com'
+    }
+
     DEFAULTS = {
       environment: :live
     }
@@ -22,7 +27,8 @@ module MyJohnDeereApi
       @api_secret = api_secret
 
       self.environment = options[:environment]
-      @site = options[:site] || URLS[@environment]
+      url = options[:aemp] ? AEMP_URLS[@environment] : URLS[@environment]
+      @site = options[:site] || url
     end
 
     ##
