@@ -24,16 +24,14 @@ module MyJohnDeereApi::Request
         # NOTE: assuming the last page is full
         Integer(last_page_number) * 100
       else
-        # TODO: how to count items from the page
-        1
+        Array.wrap(first_page.values[0]["Equipment"]).count
       end
     end
 
     private
 
     def add_items_from_page(page)
-      # TODO: add support for multiple equipments
-      @items += [model.new(client, page.values[0]["Equipment"])]
+      @items += Array.wrap(page.values[0]["Equipment"]).map{|record| model.new(client, record)}
     end
 
     def set_next_page(page)
