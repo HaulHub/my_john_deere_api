@@ -3,7 +3,7 @@ module MyJohnDeereApi
     include Helpers::EnvironmentHelper
     include Helpers::CaseConversion
 
-    attr_accessor :contribution_definition_id
+    attr_accessor :contribution_definition_id, :aemp
     attr_reader :api_key, :api_secret, :token_hash, :http_retry_options
 
     DEFAULTS = {
@@ -22,6 +22,7 @@ module MyJohnDeereApi
     #
     # [:contribution_definition_id] optional, but needed for some requests
     #                               like asset create/update
+    # [:aemp] optional, needed for making requests to AEMP URL
     #
     # [:token_hash] a hash used to re-create the access token
 
@@ -37,6 +38,7 @@ module MyJohnDeereApi
 
       self.environment = options[:environment]
       @contribution_definition_id = options[:contribution_definition_id]
+      @aemp = options[:aemp] || false
       @http_retry_options = options[:http_retry]
     end
 
@@ -80,8 +82,17 @@ module MyJohnDeereApi
 
     def get resource
       response = accessor.get(resource, headers: headers)
+      content_type = response.content_type
+      body = response.body
 
-      JSON.parse(response.body)
+      case content_type
+      when "application/xml"
+        MultiXml.parse(body)
+      when "application/json", "application/vnd.deere.axiom.v3+json"
+        JSON.parse(body)
+      else
+        raise "Content-Type #{content_type} not supported!"
+      end
     end
 
     ##
@@ -131,6 +142,12 @@ module MyJohnDeereApi
       @organizations = MyJohnDeereApi::Request::Collection::Organizations.new(self)
     end
 
+    def fleets(**kwargs)
+      (@fleets ||= {})[kwargs.hash] ||= begin
+        MyJohnDeereApi::Request::Collection::Fleets.new(self, **kwargs)
+      end
+    end
+
     ##
     # contribution products associated with this app (not user-specific)
 
@@ -146,7 +163,7 @@ module MyJohnDeereApi
 
     def oauth_client
       return @oauth_client if defined?(@oauth_client)
-      @oauth_client = MyJohnDeereApi::Consumer.new(@api_key, @api_secret, environment: environment).platform_client
+      @oauth_client = MyJohnDeereApi::Consumer.new(@api_key, @api_secret, environment: environment, aemp: aemp).platform_client
     end
 
     def headers
