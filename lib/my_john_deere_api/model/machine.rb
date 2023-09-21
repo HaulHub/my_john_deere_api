@@ -61,9 +61,9 @@ module MyJohnDeereApi
     def map_attributes(record)
       @vin = record['vin']
       @name = record['name']
-      @category = record['category']
-      @make = record['make']
-      @model = record['model']
+      @category = record['category'] || record['equipmentType']
+      @make = record['make'] || record['equipmentMake']
+      @model = record['model'] || record['equipmentModel']
     end
 
     def expected_record_type
