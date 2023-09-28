@@ -1,6 +1,6 @@
 module MyJohnDeereApi
   class Model::Machine < Model::Base
-    attr_reader :name, :vin, :category, :make, :model
+    attr_reader :name, :vin, :category, :make, :model, :telematics_state
 
     ##
     # A listing of attributes that can be passed back to John Deere
@@ -64,6 +64,7 @@ module MyJohnDeereApi
       @category = record['category'] || record['equipmentType']
       @make = record['make'] || record['equipmentMake']
       @model = record['model'] || record['equipmentModel']
+      @telematics_state = record['telematicsState']
     end
 
     def expected_record_type
